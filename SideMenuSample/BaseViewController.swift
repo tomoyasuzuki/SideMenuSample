@@ -134,4 +134,21 @@ class BaseViewController: UIViewController {
         }, completion: nil)
         
     }
+    
+    /*
+ 
+     以降では、サイドメニュー画面が表示されている状態のタップ位置を検知し、適切な処理を記述する
+ 
+    */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
 }
