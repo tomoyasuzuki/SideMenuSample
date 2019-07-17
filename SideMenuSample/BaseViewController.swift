@@ -14,6 +14,8 @@ class BaseViewController: UIViewController {
     
     var sideMenuStatus: SideMenuStatus = .closed
     
+    var currentDisplayViewType: Int = ButtonType.firstButton.rawValue
+    
     var touchesBeganPositionX: CGFloat!
     
     /*
@@ -202,5 +204,58 @@ class BaseViewController: UIViewController {
         } else if  touchesBeganPositionX >= 260 && baseView.frame.origin.x >= 160 {
             changeSideMenuState(status: .open)
         }
+    }
+}
+
+extension BaseViewController: SideMenuDelegate {
+    func changeBaseView(buttonType: Int) {
+        // 以降が実際に画面切り替えの処理を担う
+        // 引数でボタンタイプが渡されているので、それに基づき画面を切り替える
+        
+        let alreadyDisplayed: Bool = (currentDisplayViewType == buttonType)
+        
+        if alreadyDisplayed {
+            return
+        } else {
+            switch buttonType {
+            case ButtonType.firstButton.rawValue:
+                // FirstViewControllerを表示する
+                self.displayFirstViewController()
+                
+            case ButtonType.secondButton.rawValue:
+                // SecondViewControllerを表示する
+                self.displaySecondViewController()
+                
+            case ButtonType.thirdButton.rawValue:
+                // ThirdViewControllerを表示する
+                self.displayThirdViewController()
+                
+            case ButtonType.forthButton.rawValue:
+                // ForthViewControllerを表示する
+                self.displayForthViewController()
+                
+            default:
+                break
+            }
+        }
+    }
+}
+
+
+extension BaseViewController {
+    func displayFirstViewController() {
+        
+    }
+    
+    func displaySecondViewController() {
+        
+    }
+    
+    func displayThirdViewController() {
+        
+    }
+    
+    func displayForthViewController() {
+        
     }
 }
