@@ -16,6 +16,7 @@
 		57E0330D22DC6EFD000C5D59 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0330C22DC6EFD000C5D59 /* BaseViewController.swift */; };
 		57E0330F22DC6F19000C5D59 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0330E22DC6F19000C5D59 /* SideMenuViewController.swift */; };
 		57E0331122DC775D000C5D59 /* SideMenuStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0331022DC775D000C5D59 /* SideMenuStatus.swift */; };
+		57E0331722DD410D000C5D59 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0331622DD410D000C5D59 /* ButtonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		57E0330C22DC6EFD000C5D59 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		57E0330E22DC6F19000C5D59 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		57E0331022DC775D000C5D59 /* SideMenuStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuStatus.swift; sourceTree = "<group>"; };
+		57E0331622DD410D000C5D59 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				57E0330C22DC6EFD000C5D59 /* BaseViewController.swift */,
 				57E0330E22DC6F19000C5D59 /* SideMenuViewController.swift */,
 				57E0331022DC775D000C5D59 /* SideMenuStatus.swift */,
+				57E0331622DD410D000C5D59 /* ButtonType.swift */,
 				57E032F822DC6E73000C5D59 /* Main.storyboard */,
 				57E0330622DC6EAC000C5D59 /* Top.storyboard */,
 				57E0330822DC6EBA000C5D59 /* Info.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E0331722DD410D000C5D59 /* ButtonType.swift in Sources */,
 				57E032F522DC6E73000C5D59 /* AppDelegate.swift in Sources */,
 				57E0331122DC775D000C5D59 /* SideMenuStatus.swift in Sources */,
 				57E0330F22DC6F19000C5D59 /* SideMenuViewController.swift in Sources */,

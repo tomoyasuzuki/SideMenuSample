@@ -49,9 +49,43 @@
                     <view key="view" contentMode="scaleToFill" id="TFj-sj-OVZ">
                         <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.77078510860000005" blue="0.077130606520000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-zc-bKv">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-Fi-g3R">
+                                <rect key="frame" x="29" y="174" width="202" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgX-CJ-CJD">
+                                <rect key="frame" x="29" y="238" width="202" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-fm-edW">
+                                <rect key="frame" x="29" y="304" width="202" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpf-Gf-PMj">
+                                <rect key="frame" x="29" y="369" width="202" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mix-Hr-JX9"/>
                     </view>
                     <size key="freeformSize" width="260" height="667"/>
+                    <connections>
+                        <outlet property="firstButton" destination="HiZ-Fi-g3R" id="8a9-8O-Pe3"/>
+                        <outlet property="forthButton" destination="Tpf-Gf-PMj" id="rsZ-7H-7Nr"/>
+                        <outlet property="secondButton" destination="lgX-CJ-CJD" id="F0f-nF-DUz"/>
+                        <outlet property="thirdButton" destination="k8g-fm-edW" id="i7W-Hz-kCw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02M-wc-zRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
