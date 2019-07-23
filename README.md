@@ -1,0 +1,23 @@
+SideMenuSample/Full scratch
+====
+
+Overview
+
+## Description
+This repository is an example to achieve more certain ability in UI coding by implementing side menu from scratch.
+
+Most of this sample follows the sample below. 
+[https://github.com/fumiyasac/ios_ui_recipe_showcase]
+
+The variable name and the description method sometimes have been changed in consideration of the partial clarity.
+
+## Requirement
+Xcode10.1
+Swift4.2
+
+## Usage
+1. You should read [https://github.com/fumiyasac/ios_ui_recipe_showcase].if you cant understand this github, this repository may help you.
+2. I made three branches because it help you to understand this example step by step.
+3. This example has two important point. Parent-Child relationships between more than two ViewControllers,Protocol.
+
+If you have more good solution or comment, please help me! 
