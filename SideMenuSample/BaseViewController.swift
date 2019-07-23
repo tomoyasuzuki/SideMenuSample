@@ -18,6 +18,8 @@ class BaseViewController: UIViewController {
     
     var touchesBeganPositionX: CGFloat!
     
+    var viewControllers: [UIViewController] = [FirstViewController(),SecondViewController(),ThirdViewController(),ForthViewController()]
+    
     /*
      
      まずは「画面左端をスライドするとSideMenuが表示されるという状態」を目指す。
@@ -30,6 +32,8 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        displayFirstViewController()
         
         let leftEdgesGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgesTapGesture(sender:)))
         leftEdgesGesture.edges = .left
@@ -72,7 +76,7 @@ class BaseViewController: UIViewController {
         sender.setTranslation(CGPoint.zero, in: self.view)
     }
     
-    private func changeSideMenuState(status: SideMenuStatus) {
+    func changeSideMenuState(status: SideMenuStatus) {
         if status == .open {
             sideMenuStatus = status
             openSideMenu()
@@ -82,7 +86,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    private func openSideMenu() {
+    private func openSideMenu(withCompletion: (() -> ())? = nil) {
         self.sideMenuView.isUserInteractionEnabled = true
         self.baseView.isUserInteractionEnabled = false
         
@@ -96,7 +100,11 @@ class BaseViewController: UIViewController {
                 width: self.baseView.frame.width,
                 height: self.baseView.frame.height)
             
-        }, completion: nil)
+        }, completion: { _ in
+            
+            // 引数で受け取った完了時に行いたい処理を実行する
+            withCompletion?()
+        })
         
         
         UIView.animate(withDuration: 0.16, delay: 0, options: [.curveEaseOut], animations: {
@@ -108,10 +116,14 @@ class BaseViewController: UIViewController {
                 width: self.sideMenuView.frame.width,
                 height: self.sideMenuView.frame.height)
             
-        }, completion: nil)
+        }, completion: { _ in
+            
+            // 引数で受け取った完了時に行いたい処理を実行する
+            withCompletion?()
+        })
     }
     
-    private func closeSideMenu() {
+    private func closeSideMenu(withCompletion: (() -> ())? = nil) {
         self.sideMenuView.isUserInteractionEnabled = false
         self.baseView.isUserInteractionEnabled = true
         
@@ -125,7 +137,11 @@ class BaseViewController: UIViewController {
                 width: self.baseView.frame.width,
                 height: self.baseView.frame.height)
             
-        }, completion: nil)
+        }, completion: { _ in
+            
+            // 引数で受け取った完了時に行いたい処理を実行する
+            withCompletion?()
+        })
         
         // UIView.animate { ..... } の部分がサイドメニューを表示するロジック + アニメーション
         UIView.animate(withDuration: 0.16, delay: 0, options: [.curveEaseOut], animations: {
@@ -137,7 +153,11 @@ class BaseViewController: UIViewController {
                 width: self.sideMenuView.frame.width,
                 height: self.sideMenuView.frame.height)
             
-        }, completion: nil)
+        }, completion: { _ in
+            
+            // 引数で受け取った完了時に行いたい処理を実行する
+            withCompletion?()
+        })
         
     }
     
@@ -209,10 +229,15 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController: SideMenuDelegate {
     func changeBaseView(buttonType: Int) {
+        print("call changeBaseView")
         // 以降が実際に画面切り替えの処理を担う
         // 引数でボタンタイプが渡されているので、それに基づき画面を切り替える
+        // 画面を表示する処理自体は他の部分でも使用する可能性があるため、ここではあくまで呼び出すだけ。
         
         let alreadyDisplayed: Bool = (currentDisplayViewType == buttonType)
+        
+        print("debug:\(alreadyDisplayed)")
+        print(buttonType)
         
         if alreadyDisplayed {
             return
@@ -220,19 +245,35 @@ extension BaseViewController: SideMenuDelegate {
             switch buttonType {
             case ButtonType.firstButton.rawValue:
                 // FirstViewControllerを表示する
-                self.displayFirstViewController()
+                closeSideMenu {
+                    self.displayFirstViewController()
+                    print("-------------")
+                }
+                break
                 
             case ButtonType.secondButton.rawValue:
                 // SecondViewControllerを表示する
-                self.displaySecondViewController()
+                closeSideMenu {
+                    self.displaySecondViewController()
+                    print("-------------")
+                }
+                break
                 
             case ButtonType.thirdButton.rawValue:
                 // ThirdViewControllerを表示する
-                self.displayThirdViewController()
+                closeSideMenu {
+                    self.displayThirdViewController()
+                    print("-------------")
+                }
+                break
                 
             case ButtonType.forthButton.rawValue:
                 // ForthViewControllerを表示する
-                self.displayForthViewController()
+                closeSideMenu {
+                    self.displayForthViewController()
+                    print("-------------")
+                }
+                break
                 
             default:
                 break
@@ -243,19 +284,47 @@ extension BaseViewController: SideMenuDelegate {
 
 
 extension BaseViewController {
+    /*
+
+    実際に画面を表示する処理ではviewControllerを指定して表示する
+ 
+    */
     func displayFirstViewController() {
-        
+        dispViewController(index: 0)
+        print("secondButton tapped!")
     }
     
     func displaySecondViewController() {
-        
+        dispViewController(index: 1)
+        print("secondButton tapped!")
     }
     
     func displayThirdViewController() {
-        
+        dispViewController(index: 2)
+        print("thirdButton tapped!")
     }
     
     func displayForthViewController() {
-        
+        dispViewController(index: 3)
+        print("forthButton tapped!")
+    }
+}
+
+extension BaseViewController {
+    private func dispViewController(index: Int) {
+        let vc = viewControllers[index]
+        baseView.addSubview(vc.view)
+        self.addChild(vc)
+        vc.didMove(toParent: self)
+        print("great!!!")
+    }
+}
+
+extension BaseViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSideMenuView" {
+            let sideNavigationController = segue.destination as! SideMenuViewController
+            sideNavigationController.delegate = self
+        }
     }
 }

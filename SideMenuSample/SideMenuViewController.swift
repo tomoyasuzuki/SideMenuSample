@@ -5,7 +5,6 @@
 //  Created by 鈴木友也 on 2019/07/15.
 //  Copyright © 2019 tomoya.suzuki. All rights reserved.
 //
-
 import UIKit
 
 protocol SideMenuDelegate: NSObjectProtocol {
@@ -61,5 +60,6 @@ class SideMenuViewController: UIViewController {
         
         let buttonType: Int = sender.tag
         self.delegate?.changeBaseView(buttonType: buttonType)
+        print("tapped")
     }
 }
