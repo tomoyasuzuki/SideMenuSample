@@ -1,4 +1,4 @@
-SideMenuSample/Full scratch
+SideMenuSample From scratch
 ====
 
 ## Description
