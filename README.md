@@ -6,7 +6,7 @@ This repository is an example to achieve more certain ability in UI coding by im
 
 Most of this sample follows the sample below. 
 This repository is wonderful!!
-So every begginers and people who are poor at UI coding should study this!
+So every bigginers and people who are poor at UI coding should study this!
 [https://github.com/fumiyasac/ios_ui_recipe_showcase]
 
 The variable name and the description method sometimes have been changed in consideration of the partial clarity.
