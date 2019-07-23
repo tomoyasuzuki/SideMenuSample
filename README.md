@@ -1,5 +1,7 @@
 SideMenuSample From scratch
 ====
+<img width="374" alt="スクリーンショット 2019-07-23 22 12 34" src="https://user-images.githubusercontent.com/43513915/61715054-3c9b7a00-ad97-11e9-88fe-f4bbc1a74f79.png">
+
 
 ## Description
 This repository is an example to achieve more certain ability in UI coding by implementing side menu from scratch.
