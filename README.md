@@ -1,8 +1,6 @@
 SideMenuSample/Full scratch
 ====
 
-Overview
-
 ## Description
 This repository is an example to achieve more certain ability in UI coding by implementing side menu from scratch.
 
